@@ -1,0 +1,41 @@
+﻿@model List<Employee>
+
+@{
+    ViewData["Title"] = "Testimonials";
+}
+
+
+
+<div class="container">
+
+    <div class="section-title">
+        <h2>Team</h2>
+        <p>Sit sint consectetur velit quos quisquam cupiditate nemo qui</p>
+    </div>
+
+    <div class="row">
+        @foreach (Employee employee in Model)
+        {
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="member">
+                    <img src="~/assets/img/team/@employee.Img" alt="">
+                    <h4>@employee.FullName</h4>
+                    <span>@employee.Professian</span>
+                    <p>
+                        @employee.Bio
+                    </p>
+                    <div class="social">
+                        <a href="@employee.Twitter" target="_blank"><i class="bi bi-twitter"></i></a>
+                        <a href="@employee.Facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="@employee.Instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="@employee.Linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        }
+
+
+    </div>
+
+</div>
